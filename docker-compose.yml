@@ -1,0 +1,58 @@
+services:
+  user-db:
+    image: postgres:16-alpine
+    container_name: user-db
+    restart: unless-stopped
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: matthew
+      POSTGRES_PASSWORD: LylitAletAlbay.14
+      POSTGRES_DB: user_db
+    volumes:
+      - ./data/user-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U matthew -d user_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  exercise-db:
+    image: postgres:16-alpine
+    container_name: exercise-db
+    restart: unless-stopped
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: matthew
+      POSTGRES_PASSWORD: LylitAletAlbay.14
+      POSTGRES_DB: exercise_db
+    volumes:
+      - ./data/exercise-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U matthew -d exercise_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  training-db:
+    image: postgres:16-alpine
+    container_name: training-db
+    restart: unless-stopped
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: matthew
+      POSTGRES_PASSWORD: LylitAletAlbay.14
+      POSTGRES_DB: training_db
+    volumes:
+      - ./data/training-db:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U matthew -d training_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+networks:
+  default:
+    name: gym-diary-network

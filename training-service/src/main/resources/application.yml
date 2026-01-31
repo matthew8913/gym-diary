@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: training-service
+  datasource:
+    url: jdbc:postgresql://localhost:5434/training_db
+    username: matthew
+    password: LylitAletAlbay.14
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+server:
+  port: 8083

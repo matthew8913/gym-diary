@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: exercise-service
+  datasource:
+    url: jdbc:postgresql://localhost:5433/exercise_db
+    username: matthew
+    password: LylitAletAlbay.14
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: true
+server:
+  port: 8081

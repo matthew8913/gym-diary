@@ -1,0 +1,22 @@
+### --- Database Data ---
+data/
+
+### --- Gradle ---
+.gradle/
+**/build/
+
+### --- IntelliJ IDEA ---
+.idea/
+*.iml
+out/
+gen/
+
+### --- OS files ---
+.DS_Store
+Thumbs.db
+
+### --- Environment Secrets ---
+.env
+
+### --- Files created by tools ---
+amplicode.xml

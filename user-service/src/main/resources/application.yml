@@ -9,5 +9,24 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8085/realms/gym-diary-realm
+          jwk-set-uri: http://localhost:8085/realms/gym-diary-realm/protocol/openid-connect/certs
+
+
+keycloak:
+  server-url: http://localhost:8085
+  realm: gym-diary-realm
+  client-id: gym-diary-client
+  client-secret: EQSuK65jpf7BCBsvBWA81Wp99R9ceCmM
+
 server:
   port: 8080
+
+logging:
+  level:
+    root: info
+    sql: debug
